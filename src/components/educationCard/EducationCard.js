@@ -2,7 +2,6 @@ import React, {useState,createRef, useContext} from "react";
 import {Fade, Slide} from "react-reveal";
 import "./EducationCard.scss";
 import StyleContext from "../../contexts/StyleContext";
-import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
 export default function EducationCard({school}) {
   const imgRef = createRef();
@@ -12,11 +11,6 @@ export default function EducationCard({school}) {
   function getColorArrays() {
     const colorThief = new ColorThief();
     setColorArrays(colorThief.getColor(imgRef.current));
-  }
-   function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
   }
   const GetDescBullets = ({descBullets}) => {
     return descBullets
@@ -36,7 +30,7 @@ export default function EducationCard({school}) {
       <Fade left duration={1000}>
         <div className="education-card">
           {school.logo && (
-            <div  style={{background: rgb(colorArrays)}} className="education-card-left">
+            <div className="education-card-left">
               <img
                 crossOrigin={"anonymous"}
                 ref={imgRef}

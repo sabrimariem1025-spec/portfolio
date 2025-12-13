@@ -221,19 +221,31 @@ const bigProjects = {
   title: "Projects",
   subtitle: "",
   projects: [
+     {
+      image: require("./assets/images/ecommerce.png"),
+      projectName: "LUXE BOUTIQUE - E-Commerce Frontend",
+      projectDesc: "A modern, responsive e-commerce website built with Next.js 15 and React, featuring an elegant minimalist design, product showcase, and smooth user interactions. Fully deployed on Vercel with a professional UI/UX optimized for performance and accessibility.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://ecommerce-front-xi-rust.vercel.app/"
+        }
+      ]
+    },
+       {
+      image: require("./assets/images/rhapp.png"),
+      projectName: "HR Management App – Master Final Year Project",
+      projectDesc: "A centralized HR app that streamlines recruitment, onboarding, and employee management. It digitizes probation evaluations, contracts, and documentation, while keeping managers and HR teams updated. The solution improves transparency, efficiency, and workforce management.",
+     
+    },
     {
       image: require("./assets/images/wassaleni.png"),
-      projectName: "Carpooling App",
-      projectDesc: "Explore our mobile carpooling app, designed to make your trips easier, safer, and more connected. With our app, passengers can easily find and contact drivers heading in their direction, while drivers have the freedom to choose their preferred route directly on the integrated map. Users can share their trip status, update destinations, and communicate details through a well-structured form, ensuring transparency and better coordination. Whether you’re looking to save time, reduce travel costs, or meet fellow travelers, our app makes every journey convenient, safe, and social.",
+      projectName: "Mobile Carpooling App – Licence Final Year Project",
+      projectDesc: "A mobile app that makes carpooling easy, safe, and social. Passengers can quickly find drivers on their route, while drivers choose their preferred trips via an integrated map. Users can share trip status, update destinations, and communicate efficiently, making every journey convenient and connected.",
     
-    },
-     
-    {
-      image: require("./assets/images/rhapp.png"),
-      projectName: "HR Management App",
-      projectDesc: "Streamline your recruitment workflow from job requests to new hire onboarding with full traceability at every step. The app also digitizes probation evaluations, contract management, and employee documentation for efficient HR operations. Managers and HR teams can track progress, communicate updates, and ensure compliance, while employees receive timely notifications and clear guidance. This centralized solution improves transparency, reduces administrative workload, and enhances overall workforce management, making HR processes smoother, faster.",
-     
     }
+     
+ 
   ],
   display: true // Set false to hide this section, defaults to true
 };

@@ -148,7 +148,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Higher Institute of Computer Science of Medenine, Médenine, Tunisia ",
-      logo: require("./assets/images/isimed.jpg"),
+      logo: require("./assets/images/education.jpg"),
       subHeader: "MASTER’S DEGREE IN SOFTWARE & KNOWLEDGE ENGINEERING ",
       duration: "September 2021 - June 2023",
       desc: "Graduated with High Distinction; focused on software engineering, knowledge engineering, system architecture, and performance optimization. ",
@@ -156,7 +156,7 @@ const educationInfo = {
     },
     {
       schoolName: "Higher Institute of Computer Science of Medenine, Médenine, Tunisia ",
-      logo: require("./assets/images/isimed.jpg"),
+      logo: require("./assets/images/education.jpg"),
       subHeader: "APPLIED BACHELOR’S DEGREE IN MULTIMEDIA & WEB TECHNOLOGIES",
       duration: "September 2018 - June 2021",
       desc: "Completed coursework in programming, databases, multimedia systems, web development, and software fundamentals.",

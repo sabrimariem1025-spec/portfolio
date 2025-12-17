@@ -43,52 +43,54 @@ export default function Contact() {
     }
   }
 
-  const onSubmit = async (event) => {
-    event.preventDefault()
+ const onSubmit = async (event) => {
+  event.preventDefault()
 
-    const formData = new FormData(event.target)
-    const newErrors = {}
-    formData.forEach((value, key) => {
-      if (key !== "access_key") {
-        const error = validateField(key, value)
-        if (error) newErrors[key] = error
-      }
+  const formData = new FormData(event.target)
+  const newErrors = {}
+  
+  formData.forEach((value, key) => {
+    if (key !== "access_key") {
+      const error = validateField(key, value)
+      if (error) newErrors[key] = error
+    }
+  })
+
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors)
+    setTouched({ name: true, email: true, message: true })
+    return
+  }
+
+  setIsSubmitting(true)
+  setResult("")
+
+  formData.append("access_key", "fe34e759-0256-4d0d-a361-71be9bbf59cf")
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     })
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
-      setTouched({ name: true, email: true, message: true })
-      return
+    const data = await response.json() // ← UN SEUL appel ici
+
+    if (data.success) {
+      setResult("Message sent successfully!")
+      event.target.reset()
+      setErrors({})
+      setTouched({})
+      setTimeout(() => setResult(""), 5000)
+    } else {
+      console.log("API returned error:", data)
+      setResult("Error sending message. Please try again.")
     }
-
-    setIsSubmitting(true)
-    setResult("")
-
-    formData.append("access_key", "fe34e759-0256-4d0d-a361-71be9bbf59cf")
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setResult("Message sent successfully!")
-        event.target.reset()
-        setErrors({})
-        setTouched({})
-        setTimeout(() => setResult(""), 5000)
-      } else {
-        setResult("Error sending message. Please try again.")
-      }
-    } catch (error) {
-      setResult("Connection error. Please check your internet connection.")
-    } finally {
-      setIsSubmitting(false)
-    }
+  } catch (error) {
+    console.error("Caught error:", error)
+  } finally {
+    setIsSubmitting(false)
   }
+}
 
   return (
     <Fade bottom duration={1000} distance="20px">

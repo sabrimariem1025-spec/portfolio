@@ -1,9 +1,8 @@
 @import "../../_globalColor";
 
 .main-button {
-  background-color: $buttonColor;
-  border: solid 1px $buttonColor;
-  color: $textColorDark;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border: solid 1px ;
+   color: #ffffff;
   font-weight: 700;
   width: max-content;
   padding: 13px 22px;
@@ -19,8 +18,8 @@
   transition: all 0.3s ease-in-out 0s;
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border: solid 1px;
+   color: #ffffff;
   transition: all 0.3s ease 0s;
   transform: translateY(-3px);
 }
@@ -45,3 +44,4 @@
     font-size: 0.75rem;
   }
 }
+

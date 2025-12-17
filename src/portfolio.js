@@ -221,6 +221,17 @@ const bigProjects = {
   title: "Projects",
   subtitle: "",
   projects: [
+    {
+      image: require("./assets/images/basicport.png"),
+      projectName: "Basic Portfolio",
+     projectDesc: "A clean and responsive personal portfolio website built using pure HTML, CSS, and JavaScript. It features a structured layout with sections for introduction, skills, projects, and contact, designed to demonstrate frontend fundamentals and clean code organization.",
+footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://basic-portfilio.vercel.app/"
+        }
+      ]
+    },
      {
       image: require("./assets/images/ecommerce.png"),
       projectName: "LUXE BOUTIQUE - E-Commerce Frontend",
@@ -254,7 +265,7 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
+  title: "Achievements And Certifications",
   subtitle:
     "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
 
@@ -357,7 +368,7 @@ const resumeSection = {
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: "Contact Me",
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+21653978027",
